@@ -1,3 +1,13 @@
+/* 1. Global Reset & Variables */
+:root {
+    --color-bg: hsl(0, 0%, 8%);        
+    --color-card: hsl(0, 0%, 12%);     
+    --color-btn: hsl(0, 0%, 20%);      
+    --color-btn-hover: hsl(75, 94%, 57%); 
+    --color-text-white: hsl(0, 0%, 100%);
+    --color-text-grey: hsl(0, 0%, 85%);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,77 +16,84 @@
 }
 
 body {
-    
-    background-color: hsl(0, 0%, 8%);
+    background-color: var(--color-bg);
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    padding: 24px; 
 }
 
+/* 2. Card Container */
 .card {
-    background-color: hsl(0, 0%, 12%);
-    width: 320px;
-    height: 500px;
-    padding: 16px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-    border-radius: 1.5rem;
-    align-items: center;
-}
-
-.card-button {
-    background-color: hsl(0, 0%, 20%);
-    color: white;
+    background-color: var(--color-card);
     width: 100%;
-    padding: 12px;
-    font-size: 14px;
-    font-weight: 700;
+    max-width: 380px; 
+    padding: 40px;
+    border-radius: 12px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    border-radius: 1rem;
+    flex-direction: column;
+    align-items: center; 
+    gap: 24px; 
 }
 
-.card-button:hover {
-    background-color: hsl(75, 94%, 57%);
-    color: black;
-}
-
-.author {
+/* 3. Profile Header */
+.profile-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 8px; 
+    text-align: center;
 }
 
-.author-img {
-    width: 100px;
-    height: 100px;
+.avatar {
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
     object-fit: cover;
+    margin-bottom: 16px; 
 }
 
-.author-name {
+.name {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--color-text-white);
+}
+
+.location {
+    font-size: 14px;
     font-weight: 700;
-    font-size: 20px;
-    color: white;
+    color: var(--color-btn-hover); 
+    margin-bottom: 16px; 
 }
 
-.author-subtext {
+.bio {
+    font-size: 14px;
+    color: var(--color-text-grey);
+}
+
+.link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; 
+    width: 100%;
+}
+
+.link-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--color-btn);
+    color: var(--color-text-white);
+    text-decoration: none; 
+    text-align: center;
     font-weight: 700;
     font-size: 14px;
-    color: hsl(75, 94%, 57%);
-    align-items: center;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
-.author-subtext2 {
-    font-weight: 700;
-    font-size: 14px;
-    color: white;
-    align-items: center;
+.link-btn:hover {
+    background-color: var(--color-btn-hover);
+    color: var(--color-bg);
 }
